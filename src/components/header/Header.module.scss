@@ -1,0 +1,23 @@
+.header {
+    border: 1px solid black;
+    width: 100%;
+    height: 100px;
+
+    &__dumy {
+        width: 100%;
+        height: 100px;
+        position: fixed;
+
+        &__box {
+            border: 1px solid blue;
+            width: 95%;
+            height: 100%;
+            margin: auto;
+
+            &__menu {
+                display: flex;
+                height: 100%;
+            }
+        }
+    }
+}
