@@ -1,44 +1,62 @@
-import React from 'react';
-import styles from './Header.module.scss';
+import React, { useState } from "react";
+import styles from "./Header.module.scss";
 
 function Header() {
+    const [isActive, setIsActive] = useState(false);
     return (
         <div className={styles.header}>
-            <div className={styles.header__dumy}>
-                <div className={styles.header__dumy__box}>
-                    <ul className={styles.header__dumy__box__menu}>
+            <div
+                className={`${styles.header__hidden} ${
+                    isActive ? styles.visible : ""
+                }`}
+                onMouseEnter={() => setIsActive(true)}
+                onMouseLeave={() => setIsActive(false)}
+            ></div>
+            <div
+                className={`${styles.header__dumy} ${
+                    isActive ? styles.visible : ""
+                }`}
+            >
+                <div
+                    className={styles.header__dumy__box}
+                    onMouseLeave={() => setIsActive(false)}
+                >
+                    <ul
+                        className={styles.header__dumy__box__menu}
+                        onMouseEnter={() => setIsActive(true)}
+                    >
                         <li className={styles.brand}>
-                            <a href="">
+                            <a href="" className={styles.eng}>
                                 <span>Brand</span>
                             </a>
-                            <ul>
+                            <ul className={`${isActive ? styles.visible : ""}`}>
                                 <li>
-                                    <a href="">
+                                    <a href="" className={styles.brandsub1}>
                                         <span>소개</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="" className={styles.brandsub2}>
                                         <span>BI</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="" className={styles.brandsub3}>
                                         <span>본사</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="" className={styles.brandsub4}>
                                         <span>오시는 길</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li className={styles.menu}>
-                            <a href="">
+                            <a href="" className={styles.eng}>
                                 <span>Menu</span>
                             </a>
-                            <ul>
+                            <ul className={`${isActive ? styles.visible : ""}`}>
                                 <li>
                                     <a href="">
                                         <span>디저트</span>
@@ -57,22 +75,22 @@ function Header() {
                             </ul>
                         </li>
                         <li className={styles.store}>
-                            <a href="">
+                            <a href="" className={styles.eng}>
                                 <span>Store</span>
-                                <ul>
-                                    <li>
-                                        <a href="">
-                                            <span>매장찾기</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </a>
+                            <ul className={`${isActive ? styles.visible : ""}`}>
+                                <li>
+                                    <a href="">
+                                        <span>매장찾기</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li className={styles.community}>
-                            <a href="">
+                            <a href="" className={styles.eng}>
                                 <span>Community</span>
                             </a>
-                            <ul>
+                            <ul className={`${isActive ? styles.visible : ""}`}>
                                 <li>
                                     <a href="">
                                         <span>이벤트 & 소식</span>
@@ -96,10 +114,10 @@ function Header() {
                             </ul>
                         </li>
                         <li className={styles.franchise}>
-                            <a href="">
+                            <a href="" className={styles.eng}>
                                 <span>Franchise</span>
                             </a>
-                            <ul>
+                            <ul className={`${isActive ? styles.visible : ""}`}>
                                 <li>
                                     <a href="">
                                         <span>창업경쟁력</span>
@@ -128,28 +146,51 @@ function Header() {
                             </ul>
                         </li>
                     </ul>
-                    <ul className={styles.header__box__social}>
+                    <ul className={styles.header__dumy__box__sns}>
                         <li>
-                            <a href="">
-                                <img src="" alt="" />
+                            <a href="" className={styles.facebook}>
+                                <img
+                                    src="src/assets/headerimages/Facebook.svg"
+                                    alt=""
+                                />
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="" alt="" />
+                            <a href="" className={styles.insta}>
+                                <img
+                                    src="src/assets/headerimages/Instagram.svg"
+                                    alt=""
+                                />
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="" alt="" />
+                            <a href="" className={styles.youtube}>
+                                <img
+                                    src="src/assets/headerimages/youtube.svg"
+                                    alt=""
+                                />
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="" alt="" />
+                            <a href="" className={styles.tiktok}>
+                                <img
+                                    src="src/assets/headerimages/tiktok.svg"
+                                    alt=""
+                                />
                             </a>
                         </li>
                     </ul>
+                    <h1 className={styles.header__dumy__box__logo}>
+                        <span className="hidden">로고</span>
+                        <a href="" className={styles.logowrap}>
+                            <span>
+                                <img
+                                    src="src/assets/headerimages/simbol.svg"
+                                    alt=""
+                                />
+                            </span>
+                        </a>
+                    </h1>
                 </div>
             </div>
         </div>
